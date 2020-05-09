@@ -1,0 +1,27 @@
+name: Minecraft-Exile
+version: ${project.version}
+main: io.github.jmclemo6.minecraftexile.MinecraftExile
+api-version: 1.13
+load: POSTWORLD
+commands:
+  exile:
+    description: Exile someone from the community.
+    usage: |
+      /exile Player1Name [Player2Name ...] to ExileLocationName for Exile Reason
+          -- Begins an exile of 1 or more players.
+          /exile confirm
+              -- Confirms an exile that is in-progress.
+          /exile cancel
+              -- Cancels an exile that is in-progress.
+      /exile register ExileLocationName X Y Z
+          -- Registers the provided name to the provided coordinates of the current world you are in.
+      /exile delete ExileLocationName
+          -- Deletes the provided name from those that players can be exiled to.
+      /exile locations
+          -- Shows the names, worlds, and coordinates of all registered exile locations.
+
+
+permissions:
+  exile.canexile:
+    description: Allows exiling of other players with the /exile command
+    default: op
